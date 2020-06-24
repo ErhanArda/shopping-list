@@ -14,15 +14,15 @@
         
         <div class="price-row">
             <div class="price-label">Sub-total</div>
-            <div class="price-wrapper">$9.99</div>
+            <div class="price-wrapper">{{formatMoney(subTotal)}}</div>
         </div>
         <div class="price-row">
             <div class="price-label">Shipping</div>
-            <div class="price-wrapper">$9.99</div>
+            <div class="price-wrapper">{{formatMoney(shipping)}}</div>
         </div>
         <div class="price-row">
             <div class="price-label">Total</div>
-            <div class="price-wrapper">$9.99</div>
+            <div class="price-wrapper">{{formatMoney(subTotal + shipping)}}</div>
         </div>
         <button class="checkout-button">CHECKOUT</button>
     </div>
@@ -64,6 +64,25 @@
           formatMoney: function(cents){
             return '$' + cents / 100
           }
+        },
+          computed: {
+            subTotal: function () {
+                let subtotal = 0;
+                
+                this.products.forEach( (product) => {
+                    subtotal += product.price * product.qty;
+                });
+                return subtotal
+            },
+            shipping: function(){
+              let totalQantity = 0;
+
+                this.products.forEach((product)=>{
+                  totalQantity += product.qty;
+                })
+
+                return totalQantity * 399
+            }
         }
     }
 
