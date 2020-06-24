@@ -43,12 +43,27 @@
       }
     },
     methods:{
-      addProduct: function(product){
-        this.products.push(product)
-        console.log(this.products)
-      }
+      addProduct: function (product) {
+                let productIndex = this.products.findIndex(function (currentProduct) {
+                    return currentProduct.id === product.id;
+                });
+                
+                if (productIndex >= 0) {
+                    this.products[productIndex].qty++;
+                    console.log(this.products);
+                    return;
+                }
+                
+                this.products.push({
+                    ...product,
+                    qty: 1,
+                });
+                
+                console.log(this.products);
+            }
+        }
     }
-  }
+
 </script>
 
 <style scoped>
