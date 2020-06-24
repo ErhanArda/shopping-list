@@ -2,11 +2,11 @@
     <div>
         <div>
             <ul>
-                <li class="price-row">
-                    <div>Old Red Friend</div>
+                <li v-for="(product,id) in products" :key="id" class="price-row">
+                    <div>{{product.name}}</div>
                     <div class="quantity-row">
-                        <div class="price-quantity">Qty: 2</div>
-                        <div>$29.97</div>
+                        <div class="price-quantity">Qty: {{product.qty}}</div>
+                        <div>{{formatMoney(product.price * product.qty)}}</div>
                     </div>
                 </li>
             </ul>
@@ -60,7 +60,10 @@
                 });
                 
                 console.log(this.products);
-            }
+            },
+          formatMoney: function(cents){
+            return '$' + cents / 100
+          }
         }
     }
 
