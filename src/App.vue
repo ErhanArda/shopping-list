@@ -6,13 +6,14 @@
 
             <Product/>
             <Card/>  
-
+            <Todo/>
   </div>
 </template>
 
 <script>
 import Card from './components/Card.vue'
 import Product from './components/Product.vue'
+import Todo from './components/Todo'
 
 
 export default {
@@ -22,6 +23,9 @@ export default {
   },
   mounted() {
     console.log('Vue instance mounted!')
+    // fetch('https://jsonplaceholder.typicode.com/todos')
+    //   .then(response => response.json())
+    //   .then(json => this.todos = json )
   },
   destroyed() {
         console.log('Vue instance destroyed!')
@@ -32,7 +36,8 @@ export default {
   },
   components: {
     Card,
-    Product
+    Product,
+    Todo
   },
   data: ()=> {
     return {
