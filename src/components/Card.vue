@@ -30,7 +30,7 @@
 
 <script>
   import EventBus from '../bus'
-
+  
   export default {
 
     data: function(){

@@ -24,9 +24,9 @@ export default {
   data: ()=> {
     return {
         products: [
-          { id: 120, name: 'Colorful Cups1', price: 999, image: 'images/cups1.jpg'},
-          { id: 150, name: 'Colorful Cups2', price: 555, image: 'images/cups1.jpg'},
-          { id: 200, name: 'Colorful Cups3', price: 111, image: 'images/cups1.jpg'},
+          { id: 120, name: 'Colorful Cups1', price: 999, image: '../images/cups1.jpg'},
+          { id: 150, name: 'Colorful Cups2', price: 555, image: '../images/cups2.png'},
+          { id: 200, name: 'Colorful Cups3', price: 111, image: '../images/cups1.jpg'},
 
           
         ]

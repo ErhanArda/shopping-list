@@ -2,6 +2,10 @@
     <div class="product-wrapper">
         <div class="product-image">
             <img :src="product.image">
+            <img src="../images/cups1.jpg">
+            <div class="product-image">
+                {{product.image}}
+            </div>
         </div>
         <div class="product-name">{{ product.name }}</div>
         <div class="product-price">{{ priceFormatted }}</div>
