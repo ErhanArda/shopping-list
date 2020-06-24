@@ -1,10 +1,10 @@
 <template>
     <div class="product-wrapper">
         <div class="product-image">
-            <img :src="product.image">
-            <img src="../images/cups1.jpg">
+            <img v-if="!product.image" :src="product.image"> 
+            <img v-else src="../images/cups1.jpg">
             <div class="product-image">
-                {{product.image}}
+                {{'image-link: '+ product.image}}
             </div>
         </div>
         <div class="product-name">{{ product.name }}</div>
@@ -20,7 +20,9 @@ import EventBus from '../bus'
         props: {
             product:[]
         },
-        
+        mounted() {
+            console.log('Component instance mounted!')
+        },
         computed: {
             priceFormatted: function () {
                 return '$' + this.product.price / 100;

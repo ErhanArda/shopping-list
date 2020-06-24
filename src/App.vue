@@ -17,6 +17,19 @@ import Product from './components/Product.vue'
 
 export default {
   name: 'App',
+  created() {
+        console.log('Vue instance created!')
+  },
+  mounted() {
+    console.log('Vue instance mounted!')
+  },
+  destroyed() {
+        console.log('Vue instance destroyed!')
+
+  },
+  beforeCreate() {
+        console.log('Vue instance beforeCreate!')
+  },
   components: {
     Card,
     Product
