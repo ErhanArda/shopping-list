@@ -2,6 +2,8 @@
     <input v-model="value" name="my-input"/>
 </template>
 <script>
+import EventBus from '../bus';
+
 export default {
     props:['default'],
         mounted() {
@@ -9,8 +11,8 @@ export default {
         },
         updated() {
             return (this.value === this.default || this.value.length === 0  ) 
-                ? this.$emit('dirty-field', false)
-                : this.$emit('dirty-field', true);
+                ? EventBus.$emit('dirty-field', false)
+                : EventBus.$emit('dirty-field', true);
         },
     data: (()=>{
         return {
