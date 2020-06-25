@@ -6,14 +6,19 @@
 
             <Product/>
             <Card/>  
-            <Todo/>
+            <!-- <Todo/> -->
+            <div id="app" class="bg-gray-300 flex flex-col justify-center items-center h-20" >
+            <InputField default="My default text" @dirty-field="dirty = $event"/>
+            <p v-if="dirty" >Field is dirty</p>
+        </div>
   </div>
 </template>
 
 <script>
 import Card from './components/Card.vue'
 import Product from './components/Product.vue'
-import Todo from './components/Todo'
+// import Todo from './components/Todo'
+import InputField from './components/InputField'
 
 
 export default {
@@ -37,10 +42,13 @@ export default {
   components: {
     Card,
     Product,
-    Todo
+    // Todo
+    InputField
   },
   data: ()=> {
     return {
+        dirty:false,
+
         products: [
           { id: 120, name: 'Colorful Cups1', price: 999, image: '../images/cups1.jpg'},
           { id: 150, name: 'Colorful Cups2', price: 555, image: '../images/cups2.png'},
