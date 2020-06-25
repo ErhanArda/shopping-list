@@ -8,7 +8,7 @@ export default {
             this.value = this.default
         },
         updated() {
-            return (this.value === this.default) 
+            return (this.value === this.default || this.value.length === 0  ) 
                 ? this.$emit('dirty-field', false)
                 : this.$emit('dirty-field', true);
         },
